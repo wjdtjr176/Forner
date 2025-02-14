@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./assets/js/common.js" defer></script>
+    <script src="./assets/js/main.js" defer></script>
+    <script>history.scrollRestoration = "manual"</script>
+    
+</head>
+<body class="hidden">
+
+    <div class="wrapper">
+
+    <div class="loading">
+        <div class="svg-wrap">
+            <span class="line1"><span>FO</span><span>R</span></span>
+            <span class="line2"><span>NE</span><span>R</span></span>
+        </div>
+        <div class="dimmed"></div>
+    </div>
+
+    <div id="visual">
+        <div class="thumb">
+            <video class="video" playsinline autoplay muted src="./assets/images/video.mp4"></video>
+        </div>
+    </div>
+
+        <nav class="menu-area">
+            <button class="btn-logo">
+                    <svg data-v-3312c4b8="" viewBox="0 0 206 30" preserveAspectRatio="" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-100 h-100"><g data-v-3312c4b8=""><path data-v-3312c4b8="" d="M40.981 29.0016C38.8654 28.3361 37.038 27.365 35.5098 26.0829C33.9815 24.8009 32.785 23.2297 31.9257 21.3639C31.0664 19.4981 30.6367 17.3759 30.6367 14.9918C30.6367 12.6077 31.0718 10.4855 31.9366 8.61975C32.8013 6.75396 34.0032 5.18822 35.5369 3.91162C37.0706 2.63503 38.898 1.66939 41.0191 1.00382C43.1347 0.332788 45.4462 0 47.948 0C50.4497 0 52.7612 0.332788 54.8768 0.998363C56.9924 1.66394 58.8253 2.63502 60.3753 3.90617C61.9253 5.18276 63.1327 6.7485 64.0083 8.6143C64.8785 10.4801 65.3136 12.6023 65.3136 14.9864C65.3136 17.3704 64.8785 19.4926 64.0137 21.3584C63.149 23.2242 61.9416 24.7954 60.4025 26.0775C58.8579 27.3595 57.0251 28.3306 54.904 28.9962C52.7775 29.6618 50.4606 29.9945 47.9425 29.9945C45.419 30 43.0967 29.6672 40.981 29.0016ZM53.7728 26.0011C55.4805 25.4174 56.9217 24.599 58.1074 23.5461C59.2875 22.4932 60.1904 21.2384 60.8104 19.7872C61.4304 18.3361 61.7404 16.7321 61.7404 14.9864C61.7404 13.2515 61.4304 11.6585 60.8104 10.2128C60.1904 8.76705 59.2875 7.52319 58.1074 6.48663C56.9272 5.44463 55.4805 4.63721 53.7728 4.05892C52.065 3.48063 50.1234 3.19149 47.948 3.19149C45.7725 3.19149 43.8363 3.48063 42.134 4.05892C40.4317 4.63721 38.9959 5.44463 37.8212 6.48663C36.6464 7.52864 35.7491 8.76705 35.129 10.2128C34.509 11.6585 34.199 13.2515 34.199 14.9864C34.199 16.7376 34.509 18.3361 35.129 19.7872C35.7491 21.2384 36.6464 22.4932 37.8212 23.5461C38.9959 24.599 40.4372 25.4174 42.134 26.0011C43.8363 26.5848 45.7725 26.874 47.948 26.874C50.1234 26.8794 52.065 26.5848 53.7728 26.0011Z" fill="#484036"></path><path data-v-3312c4b8="" d="M89.689 0.574219C91.3804 0.574219 92.8815 0.754251 94.1922 1.10886C95.5029 1.46347 96.6015 1.99266 97.4934 2.68551C98.3854 3.38382 99.0598 4.25125 99.5112 5.28235C99.968 6.31344 100.196 7.50275 100.196 8.85027C100.196 10.9452 99.5982 12.6473 98.4017 13.9566C97.2052 15.2714 95.3724 16.5317 87.9758 16.5317L101.034 29.4122H96.4764L83.7064 17.0499H74.4063V29.4122H70.8223V0.574219H89.689ZM95.3343 12.6419C96.4982 11.7744 97.0801 10.5415 97.0801 8.94301C97.0801 8.13014 96.9332 7.40455 96.645 6.76625C96.3567 6.12795 95.9162 5.5824 95.3288 5.12959C94.7415 4.67678 94.0073 4.33308 93.1316 4.09304C92.256 3.853 90.7984 3.73297 89.6183 3.73297H74.4118V13.9457H89.6183C91.9786 13.9457 94.1704 13.5093 95.3343 12.6419Z" fill="#484036"></path><path data-v-3312c4b8="" d="M194.66 0.574219C196.351 0.574219 197.858 0.754251 199.163 1.10886C200.474 1.46347 201.572 1.99266 202.464 2.68551C203.356 3.38382 204.03 4.25125 204.482 5.28235C204.939 6.31344 205.162 7.50275 205.162 8.85027C205.162 10.9452 204.563 12.6473 203.372 13.9566C202.176 15.2714 200.343 16.5317 192.946 16.5317L206.005 29.4122H201.447L188.677 17.0499H179.377V29.4122H175.793V0.574219H194.66ZM200.3 12.6419C201.463 11.7744 202.045 10.5415 202.045 8.94301C202.045 8.13014 201.899 7.40455 201.61 6.76625C201.322 6.12795 200.881 5.5824 200.294 5.12959C199.707 4.67678 198.973 4.33308 198.097 4.09304C197.216 3.853 195.764 3.73297 194.584 3.73297H179.377V13.9457H194.584C196.944 13.9457 199.141 13.5093 200.3 12.6419Z" fill="#484036" class="animated-letter"></path><path data-v-3312c4b8="" d="M110.422 0.574219L133.025 24.655V0.574219H136.478V29.4122H132.987L109.911 4.83499V29.4122H106.457V0.574219H110.422Z" fill="#484036" class="animated-letter"></path><path data-v-3312c4b8="" d="M169.805 0.574219V3.76571H147.789V13.5857H169.212V16.6517H147.789V26.2916H170.278V29.4122H144.184V0.574219H169.805Z" fill="#484036" class="animated-letter"></path><path data-v-3312c4b8="" d="M25.6215 0.574219V3.76571H3.60039V13.5857H25.0287V16.6517H3.60039V29.4122H0V0.574219H25.6215Z" fill="#484036"></path></g><defs data-v-3312c4b8=""></defs></svg>
+            </button>
+            <button class="btn-menu">
+                <span class="word">M</span>
+                <span class="word">e</span>
+                <span class="word">n</span>
+                <span class="word">u</span>
+            </button>
+        </nav>
+
+    <div class="pop-menu">
+            <div class="group-top text">
+                <a href="">
+                    <span class="num">01</span>
+                    <span class="txt">
+                        <span>O</span>
+                        <span>U</span>
+                        <span>R</span>
+                        <span>W</span>
+                        <span>O</span>
+                        <span>R</span>
+                        <span>K</span>
+                    </span>
+                </a>
+            </div>
+            <div class="img-area">
+                <img src="./assets/images/pop1.webp" class="main" alt="EDGE of MEMBER">
+                <img src="./assets/images/pop2.webp" class="hide" alt="prod inner hey jane dek">
+                <img src="./assets/images/pop1.webp" class="hide" alt="EDGE of MEMBER">
+                <img src="./assets/images/pop2.webp" class="hide" alt="prod inner hey jane dek">
+            </div>               
+            <div class="group-bottom text">
+                <div class="bottom-area">
+                    <a href="">
+                        <span class="num">02</span>
+                        <span class="txt">
+                            <span>A</span>
+                            <span>B</span>
+                            <span>O</span>
+                            <span>U</span>
+                            <span>T</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="bottom-area">
+                    <a href="">
+                        <span class="num">03</span>
+                        <span class="txt">
+                            <span>C</span>
+                            <span>O</span>
+                            <span>N</span>
+                            <span>T</span>
+                            <span>A</span>
+                            <span>C</span>
+                            <span>T</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <button class="btn-menu close">
+                <span class="word">C</span>
+                <span class="word">l</span>
+                <span class="word">o</span>
+                <span class="word">s</span>
+                <span class="word">e</span>
+            </button>
+    </div>
+
+
+    <main id="container">
+        <section class="sc-intro">
+                <div class="group-intro">
+                    <div class="title-area">
+                        <strong class="title">Forner is a full-service studio</strong>
+                        <p class="sub-title">creating brands people love to look at,</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <div class="thumb">
+                                <img src="./assets/images/intro1.webp" alt="chair">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb">
+                                <img src="./assets/images/intro2.webp" alt="homecoming">
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="bottom-area">
+                        <p class="desc">listen to</p>
+                        <i class="line"></i>
+                        <p class="desc">and live with.</p>
+                    </div>
+                </div>
+                <div class="group-life">
+
+                    <div class="col-left">
+                        <div class="col-cont inner1">
+                            <div class="left1">
+                                <img src="./assets/images/life1.webp" alt="bussiness cards forner homecoming">
+                            </div>
+                           
+                        </div>
+                        <div class="col-cont inner2">
+                            <div class="left2"></div>
+                            <div class="right2" data-motion3="up">
+                                <img src="./assets/images/life2.webp" alt="forner screw neck">
+                            </div>
+                        </div>
+                        <div class="col-cont inner3">
+                            <div class="left3" data-motion3="up">
+                                <video class="viedo2" playsinline autoplay muted src="./assets/images/viedo2.mp4"></video>
+                            </div>
+                            <div class="right3" ></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-cont inner4">
+                                <div class="left4" data-motion3="up">
+                                    <img src="./assets/images/left4.webp" alt="forner vernis">
+                                </div>
+                                <div class="right4"></div>
+                            </div>
+                            <div class="col-cont inner5">
+                                <div class="left5" data-motion3="up">
+                                    <img src="./assets/images/left5.webp" alt="homepage homecoming">
+                                </div>
+                                <div class="right5"></div>
+                            </div>
+                        </div>
+                        <div class="col-cont inner6">
+                            <div class="left6" data-motion3="up">
+                                <img src="./assets/images/left6.webp" alt="forner waterbody">
+                            </div>
+                            <div class="right6"></div>
+                        </div>
+                        <div class="col-cont inner7">
+                            <div class="left7" data-motion3="up">
+                                <img src="./assets/images/left7.webp" alt="business card forner">
+                            </div>
+                            <div class="right7"></div>
+                        </div>
+                        <div class="col-cont inner8">
+                            <div class="left8" data-motion3="up">
+                                <img src="./assets/images/left8.webp" alt="forner mifepriston">
+                            </div>
+                            <div class="right8"></div>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <div class="right1">
+                            <div class="text-area">
+                                <strong class="title">
+                                    We bring
+                                </strong>
+                                <strong class="title">
+                                    brands to life
+                                </strong>
+                                <div class="bottom-wrap">
+                                    <strong class="title">
+                                        through
+                                    </strong>
+                                    <span class="word">
+                                        <span class="curr">Identity</span>
+                                        <div class="sub">
+                                            <span>Identity</span>
+                                            <span>Strategy</span>
+                                            <span>Collateral</span>
+                                            <span>Packaging</span>
+                                            <span>Websites</span>
+                                        </div>
+                                    </span>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                    
+        </section>
+
+        <section class="sc-recommend">
+            <h2 class="blind">추천제품</h2>
+            <div class="sticky">
+                <div class="swiper text-slide">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <h3 class="headline">Soto</h3>
+                            <span class="num">1</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <h3 class="headline">Soundmint</h3>
+                            <span class="num">2</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <h3 class="headline">CauseMedic</h3>
+                            <span class="num">3</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <h3 class="headline">Fig & Thistle</h3>
+                            <span class="num">4</span>
+                        </li>
+                        <li class="swiper-slide">
+                            <h3 class="headline">Edge Of Ember</h3>
+                            <span class="num">5</span>
+                        </li>
+                    </ul>
+                </div>   
+                <div class="swiper img-slide">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/images/slide1.webp" alt="Soto" data-swiper-parallax-y="50%">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/images/slide2.webp" alt="Soundmint" data-swiper-parallax-y="50%">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/images/slide1.webp" alt="CauseMedic" data-swiper-parallax-y="50%">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/images/slide2.webp" alt="Fig & Thistle" data-swiper-parallax-y="50%">
+                            </a>
+                        </li>
+                        <li class="swiper-slide">
+                            <a href="">
+                                <img src="./assets/images/slide1.webp" alt="Edge Of Ember" data-swiper-parallax-y="50%">
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="sc-project">
+            <div class="header">
+                <h2 class="headline">
+                    <a href="">View All Projects</a>
+                </h2>
+                <div class="content">
+                    <span class="num">15</span>
+                    <img src="./assets/images/svg-project.svg" alt="Forner" class="arrow">
+                </div>
+            </div>
+            <div class="grid">
+                <ul class="grid-list">
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                                     
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                                     
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/project-slide3.webp" class="hide" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                   
+                    <li class="grid-item">
+                        <img src="./assets/images/grid.webp" class="main" alt="viewall 1 (1)">
+                    </li>                                     
+                                      
+                </ul>
+            </div>
+        </section>
+
+        <section class="sc-contact">
+            <h2 class="blind">연락처등</h2>
+            <div class="thumb">
+                <img src="./assets/images/contact-bg.webp" alt="test footer2">
+            </div>
+            <div class="contact-area">
+                <p class="desc" data-motion="fade">If you have a potential project or<br>
+                    collaboration that you'd like<br>
+                    to discuss,
+                </p>
+                <p class="text" data-motion="fade">please,<br>
+                    contact us
+                </p>
+                <a href="mailto:info@forner.studio" class="mail" data-motion="fade">info@forner.studio</a>
+            </div>
+        </section>
+    </main>
+
+    <div class="cursor">
+            <span>M</span>
+            <span>O</span>
+            <span>R</span>
+            <span>E</span>
+
+            <span>H</span>
+            <span>E</span>
+            <span>R</span>
+            <span>E</span>
+    </div>
+
+    <footer id="footer">
+       <div class="inner">
+           <svg data-v-1839b957="" viewBox="0 0 1848 268" fill="none" xmlns="http://www.w3.org/2000/svg" class=""><g data-v-1839b957="" clip-path="url(#clip0_914_1073)"><path data-v-1839b957="" data-preset="y" data-delay=".05" data-fromy="400" d="M367.629 259.081C348.65 253.136 332.257 244.46 318.547 233.008C304.837 221.555 294.103 207.518 286.395 190.851C278.686 174.183 274.832 155.225 274.832 133.927C274.832 112.629 278.735 93.6709 286.492 77.0031C294.25 60.3353 305.032 46.3481 318.791 34.9438C332.549 23.5396 348.943 14.9133 367.971 8.96745C386.95 2.9729 407.685 0 430.129 0C452.572 0 473.307 2.9729 492.286 8.91871C511.265 14.8645 527.708 23.5396 541.613 34.8951C555.518 46.2993 566.349 60.2866 574.204 76.9544C582.01 93.6221 585.913 112.58 585.913 133.878C585.913 155.176 582.01 174.134 574.253 190.802C566.495 207.47 555.664 221.506 541.856 232.959C528 244.412 511.558 253.087 492.53 259.033C473.454 264.978 452.669 267.951 430.08 267.951C407.441 268 386.608 265.027 367.629 259.081ZM482.382 232.276C497.702 227.062 510.631 219.751 521.267 210.345C531.855 200.939 539.954 189.73 545.516 176.766C551.078 163.802 553.859 149.474 553.859 133.878C553.859 118.38 551.078 104.149 545.516 91.2341C539.954 78.319 531.855 67.2071 521.267 57.9473C510.68 48.6387 497.702 41.4257 482.382 36.2597C467.062 31.0937 449.644 28.5106 430.129 28.5106C410.613 28.5106 393.244 31.0937 377.973 36.2597C362.701 41.4257 349.821 48.6387 339.282 57.9473C328.744 67.2559 320.694 78.319 315.132 91.2341C309.57 104.149 306.789 118.38 306.789 133.878C306.789 149.522 309.57 163.802 315.132 176.766C320.694 189.73 328.744 200.939 339.282 210.345C349.821 219.751 362.75 227.062 377.973 232.276C393.244 237.491 410.613 240.074 430.129 240.074C449.644 240.123 467.062 237.491 482.382 232.276Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="274.8320007324219 0"></path><path data-v-1839b957="" data-preset="y" data-delay=".1" data-fromy="400" d="M804.586 5.12109C819.76 5.12109 833.226 6.72939 844.984 9.89723C856.742 13.0651 866.598 17.7925 874.599 23.982C882.6 30.2202 888.65 37.9692 892.7 47.1804C896.798 56.3915 898.847 67.016 898.847 79.0538C898.847 97.7685 893.481 112.974 882.747 124.671C872.013 136.416 855.571 147.674 789.217 147.674L906.361 262.74H865.475L750.918 152.304H667.488V262.74H635.335V5.12109H804.586ZM855.23 112.925C865.671 105.176 870.891 94.162 870.891 79.8823C870.891 72.6206 869.574 66.1387 866.988 60.4366C864.402 54.7345 860.45 49.8609 855.181 45.8158C849.912 41.7707 843.325 38.7003 835.47 36.5559C827.615 34.4115 814.539 33.3393 803.952 33.3393H667.537V124.573H803.952C825.127 124.573 844.789 120.674 855.23 112.925Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="635.3350219726562 5.121089935302734"></path><path data-v-1839b957="" data-preset="y" data-delay=".25" data-fromy="400" d="M1746.28 5.12109C1761.45 5.12109 1774.96 6.72939 1786.67 9.89723C1798.43 13.0651 1808.29 17.7925 1816.29 23.982C1824.29 30.2202 1830.34 37.9692 1834.39 47.1804C1838.49 56.3915 1840.49 67.016 1840.49 79.0538C1840.49 97.7685 1835.12 112.974 1824.44 124.671C1813.7 136.416 1797.26 147.674 1730.91 147.674L1848.05 262.74H1807.16L1692.61 152.304H1609.18V262.74H1577.02V5.12109H1746.28ZM1796.87 112.925C1807.31 105.176 1812.53 94.162 1812.53 79.8823C1812.53 72.6206 1811.21 66.1387 1808.63 60.4366C1806.04 54.7345 1802.09 49.8609 1796.82 45.8158C1791.55 41.7707 1784.97 38.7003 1777.11 36.5559C1769.21 34.4115 1756.18 33.3393 1745.59 33.3393H1609.18V124.573H1745.59C1766.77 124.573 1786.48 120.674 1796.87 112.925Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="1577.02001953125 5.121089935302734"></path><path data-v-1839b957="" data-preset="y" data-delay=".15" data-fromy="400" d="M990.575 5.12109L1193.34 220.242V5.12109H1224.33V262.74H1193L985.988 43.184V262.74H955.007V5.12109H990.575Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="955.0070190429688 5.121089935302734"></path><path data-v-1839b957="" data-preset="y" data-delay=".2" data-fromy="400" d="M1523.31 5.12109V33.6317H1325.81V121.357H1517.99V148.746H1325.81V234.863H1527.55V262.74H1293.46V5.12109H1523.31Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="1293.4599609375 5.121089935302734"></path><path data-v-1839b957="" data-preset="y" data-delay="0" data-fromy="400" d="M229.847 5.12109V33.6317H32.2986V121.357H224.529V148.746H32.2986V262.74H0V5.12109H229.847Z" fill="#F4F4EF" class="should-animate" style="opacity: 1; transform-origin: 0px 0px;" data-svg-origin="0 5.121089935302734"></path></g><defs data-v-1839b957=""><clipPath data-v-1839b957="" id="clip0_914_1073"><rect data-v-1839b957="" width="1848" height="268" fill="white"></rect></clipPath></defs></svg>
+       </div>
+        <div class="sns-area">
+            <ul class="sns-list">
+                <li class="sns-item">
+                    <a href="">BEHANCE</a>
+                </li>
+                <li class="sns-item">
+                    <a href="">INSTAGRAM</a>
+                </li>
+                <li class="sns-item">
+                    <a href="">PINTEREST</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    </div>
+</body>
+</html>

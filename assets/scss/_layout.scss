@@ -1,0 +1,153 @@
+
+
+
+.menu-area{
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    .btn-logo{
+        font-size: 29px;
+        color: #484036;
+        padding: 19px 38px;
+        max-width: 241px;
+        max-height: 92px;
+    }
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+    .animated-letter{
+        transition: 0.3s;
+        transform: translateY(0);
+    }
+    .animated-letter:hover{
+        transform: translateY(10px);
+    }
+}
+
+.btn-menu{
+    display: flex;
+    align-items: center;
+    font-size: 29px;
+    color: #413b34;
+    font-family:"Surt-regualar";
+    padding: 19px 38px;
+}
+.btn-menu::before{
+    background: url(../images/svg.svg) no-repeat;
+    width: 19px;
+    height: 13px;
+    content: '';
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.btn-menu:hover::before{
+    margin-right: 0;
+}
+
+
+
+
+.pop-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 1903px;
+    height: 100vh;
+    z-index: 100;
+    padding: 38px;
+    background:  rgb(236, 236, 228);
+    visibility: hidden;
+    clip-path: inset(0% 0% 100% 0%);
+    transition: 1s;
+    &.on{
+        visibility: visible;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    .img-area{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        .main{
+            position: relative;
+        }
+        .hide{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .group-bottom{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .text{
+        a{
+            font-size: 134px;
+            display: flex;
+            justify-content: center;
+            color: #413b34;
+            text-align: center;
+            line-height: 0.8;
+            font-family:"ClashDisplay-Medium" ;
+            overflow: hidden;
+            .num{
+                font-size: 40px;
+                font-family: "BigDailyShort-LightItalic";
+            }
+        }
+        
+    }
+    .btn-menu.close{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+
+
+
+
+
+
+#footer{
+    background: #acb4b8;
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 845px;
+    .inner{
+        overflow: hidden;
+    }
+    svg{
+        overflow: hidden;
+        transform: translateY(100%);
+    }
+    .sns-list{
+        display: flex;
+        justify-content: space-between;
+        font-size: 40px;
+        color: #666272;
+        font-family: "ClashDisplay-Medium";
+        a{
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
