@@ -128,7 +128,6 @@
     }
     svg{
         overflow: hidden;
-        transform: translateY(100%);
     }
     .sns-list{
         display: flex;
@@ -136,8 +135,11 @@
         font-size: 40px;
         color: #666272;
         font-family: "ClashDisplay-Medium";
-        a{
-            
+        overflow: hidden;
+        .sns-item{
+            a{
+                overflow: hidden;
+            }
         }
     }
 }

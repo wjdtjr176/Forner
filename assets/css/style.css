@@ -867,8 +867,6 @@ body {
 }
 #footer svg {
   overflow: hidden;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
 }
 #footer .sns-list {
   display: -webkit-box;
@@ -880,4 +878,8 @@ body {
   font-size: 40px;
   color: #666272;
   font-family: "ClashDisplay-Medium";
+  overflow: hidden;
+}
+#footer .sns-list .sns-item a {
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */

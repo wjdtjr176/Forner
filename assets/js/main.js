@@ -221,13 +221,15 @@ footer = gsap.timeline({
         toggleActions:"none play none reset"
     },
 })
-footer.to('#footer svg',{
-    yPercent:-100,
+footer.from('#footer svg',{
+    yPercent:100,
     opacity:1,
     duration:0.7
 })
-footer.to('#footer .sns-item',{
+footer.from('#footer .sns-item',{
+    yPercent:100,
     opacity:1,
+    duration:0.7
 })
 
 
