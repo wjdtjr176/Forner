@@ -3,7 +3,7 @@
 // 로딩
 gsap.to('.loading .svg-wrap', {
     scrollTrigger:{
-        trigger:'.visual',
+        trigger:'#visual',
         start:"0% 0%",
         end:"100% 50%",
         markers:false,
