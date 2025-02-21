@@ -14,7 +14,7 @@ gsap.to('.loading .svg-wrap', {
 
 
 // 인트로 그룹
-intro = gsap.timeline({
+let intro = gsap.timeline({
     scrollTrigger:{
         trigger:'.sc-intro .group-intro',
         start:"20% 50%",
@@ -167,6 +167,8 @@ ScrollTrigger.create({
 })
 
 // 마우스커서
+let x, y;
+
 $(window).mousemove(function(e){
    x = e.clientX;
    y = e.clientY;
